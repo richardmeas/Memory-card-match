@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match — Card Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Memory Match</h1>
+      <div class="controls">
+        <div class="stat">
+          <span class="stat-label">Moves</span>
+          <span id="moves" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Time</span>
+          <span id="timer" class="stat-value">0:00</span>
+        </div>
+        <div class="stat stars" id="stars" aria-label="Star rating">
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+          <span class="star filled">★</span>
+        </div>
+        <div class="difficulty-wrap">
+          <label for="difficulty">Size</label>
+          <select id="difficulty" aria-label="Grid size">
+            <option value="easy">Easy (4×3)</option>
+            <option value="medium" selected>Medium (4×4)</option>
+            <option value="hard">Hard (4×6)</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-restart" id="restart" aria-label="Restart game">New Game</button>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div id="board" class="board" role="grid" aria-label="Memory card grid"></div>
+    </main>
+
+    <div id="win-overlay" class="overlay" hidden aria-live="polite">
+      <div class="win-modal">
+        <div class="win-icon">🎉</div>
+        <h2>You won!</h2>
+        <p class="win-stats">
+          <span id="win-moves"></span> moves · <span id="win-time"></span>
+        </p>
+        <p class="win-stars" id="win-stars"></p>
+        <button type="button" class="btn btn-play-again" id="play-again">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
